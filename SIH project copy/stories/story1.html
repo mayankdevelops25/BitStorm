@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Magnolia Sunset Point — Netarhat Story</title>
+  <meta name="description" content="The haunting love story of Magnolia Sunset Point in Netarhat, Jharkhand — a dramatic tale of love, loss and remembrance." />
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f0b0a;
+      --card:#111315;
+      --accent:#ff8a65; /* warm sunset */
+      --muted:#bdbdbd;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: 'Montserrat',system-ui,Arial, sans-serif;
+      background: linear-gradient(180deg,#05040a 0%, #13101a 50%, #1b1420 100%);
+      color:#efecea;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+      line-height:1.6;
+    }
+
+    /* Container */
+    .container{max-width:var(--max-width);margin:48px auto;padding:24px}
+
+    /* Hero */
+    .hero{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      box-shadow:0 10px 30px rgba(2,2,2,0.7);
+      background:#000;
+      min-height:56vh;
+      display:flex;align-items:flex-end;
+    }
+    .hero::before{
+      content:"";position:absolute;inset:0;background-image: url('https://i.ibb.co/pv1rnWbJ/unnamed-8.webp');background-size:cover;background-position:center;filter:blur(0.4px) brightness(.55) contrast(.95);transform:scale(1.03);}
+    .hero-overlay{position:relative;z-index:2;padding:48px;display:flex;flex-direction:column;gap:12px;width:100%;backdrop-filter: blur(4px);}
+    h1.title{font-family:'Playfair Display', serif;font-size:clamp(28px,4vw,48px);margin:0;color:#fff;letter-spacing:0.4px;text-shadow:0 6px 18px rgba(0,0,0,0.6)}
+    p.lead{margin:0;max-width:720px;color:var(--muted);font-size:1.05rem}
+
+    .meta{display:flex;gap:12px;align-items:center;margin-top:12px}
+    .badge{background:linear-gradient(90deg,var(--accent),#ff7043);padding:6px 10px;border-radius:999px;font-weight:700;font-size:.9rem;color:#140e0b}
+
+    /* Story card */
+    .story-grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+    .story{font-size:1rem;color:#efecea}
+    .lead-line{font-weight:600;margin-bottom:12px;color:#ffd7b0}
+
+    /* Plaque */
+    .plaque{background:linear-gradient(180deg,#2b2a2a,#1b1717);padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);font-family:'Playfair Display',serif;color:#ffecd1}
+    .plaque h3{margin:0 0 8px 0}
+    .plaque p{margin:0;color:#f3e7de}
+
+    /* Timeline */
+    .timeline{margin-top:18px;border-left:2px solid rgba(255,255,255,0.03);padding-left:18px}
+    .event{margin-bottom:18px}
+    .event h4{margin:0 0 6px 0;font-size:1rem}
+    .event p{margin:0;color:var(--muted)}
+
+    /* Gallery */
+    .gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}
+    .gallery img{width:100%;height:180px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.04);box-shadow:0 6px 18px rgba(0,0,0,0.5);transform:translateY(0);transition:transform .35s ease}
+    .gallery img:hover{transform:translateY(-6px)}
+
+    /* Footer */
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.95rem}
+
+    /* Responsive */
+    @media (max-width:980px){
+      .story-grid{grid-template-columns:1fr}
+      .gallery img{height:160px}
+    }
+
+    @media (max-width:520px){
+      .hero{min-height:44vh}
+      .hero-overlay{padding:20px}
+      .container{padding:16px}
+    }
+
+    /* Small flourishes */
+    .quote{font-style:italic;color:#ffd8bf;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg, rgba(255,138,101,0.03), transparent)}
+    .read-more{display:inline-block;margin-top:14px;padding:8px 14px;border-radius:999px;background:transparent;border:1px solid rgba(255,255,255,0.06);cursor:pointer}
+
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <header class="hero" role="banner">
+      <div class="hero-overlay">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;">
+          <div>
+            <div style="display:flex;gap:12px;align-items:center">
+              <div class="badge">Netarhat</div>
+              <div style="font-size:.9rem;color:var(--muted)">Jharkhand • Folklore</div>
+            </div>
+
+            <h1 class="title">Magnolia Sunset Point — The Legend of Forbidden Love</h1>
+            <p class="lead">A melancholic tale set on the cliffs of Netarhat — where a British officer's daughter and a tribal shepherd found love, and where a sunset witnessed a tragic end.</p>
+          </div>
+
+          <div style="min-width:220px;text-align:right;color:var(--muted);font-size:.95rem">
+            <div style="font-weight:700;color:#fff">Sunset • Memory • Remembrance</div>
+            <div style="margin-top:8px;font-size:.85rem">A story told at dusk, beneath the magnolia sky.</div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="story-grid">
+      <article class="card">
+        <div class="lead-line">The Legend of Magnolia</div>
+        <div class="story">
+          <p>Magnolia Sunset Point in Netarhat, Jharkhand, is renowned not only for its breathtaking views but also for the haunting love story that gave it its name. The tale is deeply rooted in the colonial history of the region and continues to evoke emotions among visitors who come to witness the sunset from this dramatic cliff.</p>
+
+          <p style="margin-top:12px"><strong>The beginnings.</strong> Magnolia, the daughter of a British officer, was captivated by the hills and by a young tribal shepherd whose bansuri notes floated across the valleys. Their clandestine friendship grew into a profound love — a love that crossed the rigid boundaries of class and culture of the colonial era.</p>
+
+          <p style="margin-top:12px"><strong>Opposition and sorrow.</strong> Rejected by society and forbidden by family, the lovers were forced apart. Tragedy followed: the shepherd was killed on the orders of Magnolia's father, and Magnolia — brokenhearted — chose to leap from the cliff at sunset rather than live without him.</p>
+
+          <blockquote class="quote" aria-hidden="false">"She rode to the cliff as the sun melted into the valley — a final farewell that turned a place of light into a place of legend."</blockquote>
+
+          <h3 style="margin-top:16px;font-family:'Playfair Display',serif;color:#ffdfc7">Tragedy at Sunset Point</h3>
+          <p>Today a granite plaque recounts the tale — a small, solemn marker at the site where the cliff was renamed Magnolia Sunset Point. The spot draws visitors each evening to watch the sky burn orange and remember the lovers whose short story changed the hill's name forever.</p>
+
+          <div style="margin-top:16px;display:flex;gap:10px;flex-wrap:wrap;align-items:center">
+            <button class="read-more">Read the plaque</button>
+            <button class="read-more" style="border-color:rgba(255,138,101,0.12)">Visit Netarhat</button>
+          </div>
+
+        </div>
+
+        <div class="timeline" aria-label="Story timeline">
+          <div class="event">
+            <h4>Meeting</h4>
+            <p>The shepherd's bansuri called her to the cliffs. A secret friendship began.</p>
+          </div>
+          <div class="event">
+            <h4>Forbidden</h4>
+            <p>Pressure from family and society forced the lovers apart.</p>
+          </div>
+          <div class="event">
+            <h4>Aftermath</h4>
+            <p>The site became a memorial; the sunset drew people who came to remember and mourn.</p>
+          </div>
+        </div>
+
+      </article>
+
+      <aside class="card">
+        <div class="plaque">
+          <h3>Granite Plaque — "In memory of Magnolia"</h3>
+          <p>A plaque at the edge of the cliff narrates the story for visitors — a reminder that the land carries stories of both beauty and sorrow.</p>
+        </div>
+
+        <div class="gallery" style="margin-top:16px">
+          <img src="https://i.ibb.co/pv1rnWbJ/unnamed-8.webp" alt="Sunset view from Magnolia Sunset Point"/>
+          <img src="https://i.ibb.co/sd774SMn/unnamed-6.webp" alt="Cliffside silhouette at dusk"/>
+          <img src="https://i.ibb.co/WNzsc3KG/unnamed-4.webp" alt="Netarhat hills and valley"/>
+          <img src="https://i.ibb.co/nqkbn5G3/unnamed-3.webp" alt="Visitors watching sunset"/>
+        </div>
+
+        <div style="margin-top:16px;color:var(--muted);font-size:.95rem">
+          <strong>Tips for visitors</strong>
+          <ul style="padding-left:18px;margin:8px 0 0 0;color:var(--muted)">
+            <li>Arrive 30 minutes before sunset for the best view.</li>
+            <li>Respect the memorial; avoid loud music and litter.</li>
+            <li>Local guides can tell you more of the folklore and history.</li>
+          </ul>
+        </div>
+
+      </aside>
+    </section>
+
+    <footer>
+      <div style="max-width:700px;margin:0 auto">&copy; <strong>Magnolia Sunset Point</strong> — Story &amp; photos curated for the blog. Built with care for Netarhat's memory.</div>
+    </footer>
+
+  </main>
+
+</body>
+</html>

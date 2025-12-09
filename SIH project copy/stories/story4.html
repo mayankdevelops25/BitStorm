@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Culture in Motion — Jharkhand</title>
+  <meta name="description" content="Chhau dance, Maluti temples, and the living culture of Jharkhand in a unified themed blog page." />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700;900&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#0f0b0a;
+      --card:#111315;
+      --accent:#ff8a65; 
+      --muted:#bdbdbd;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --max-width:1100px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+
+    body{
+      margin:0;
+      font-family:'Montserrat',system-ui,Arial;
+      background:linear-gradient(180deg,#05040a 0%,#13101a 50%,#1b1420 100%);
+      color:#efecea;
+      line-height:1.6;
+    }
+
+    .container{max-width:var(--max-width);margin:48px auto;padding:24px}
+
+    /* HERO */
+    .hero{
+      position:relative;
+      border-radius:24px;
+      overflow:hidden;
+      background:#000;
+      min-height:44vh;
+      display:flex;
+      align-items:center;
+      padding:28px;
+      gap:24px;
+      box-shadow:0 10px 30px rgba(2,2,2,0.7);
+    }
+
+    .hero::before{
+      content:"";
+      position:absolute;
+      inset:0;
+      background-image:linear-gradient(90deg,rgba(255,138,101,0.05),rgba(0,0,0,0.4));
+    }
+
+    .hero-img{
+      width:240px;
+      flex-shrink:0;
+      border-radius:14px;
+      overflow:hidden;
+      border:1px solid rgba(255,255,255,0.06);
+      box-shadow:0 8px 20px rgba(0,0,0,0.6);
+    }
+    .hero-img img{width:100%;height:100%;object-fit:cover}
+
+    .hero-content{position:relative;z-index:5}
+    .kicker{display:inline-block;padding:6px 12px;border-radius:999px;background:linear-gradient(90deg,var(--accent),#ff7043);font-weight:700;color:#140e0b}
+    h1.title{font-family:'Playfair Display',serif;font-size:clamp(26px,3.8vw,44px);margin:10px 0;color:#fff}
+    p.lead{color:var(--muted);max-width:760px;margin:0}
+
+    /* GRID */
+    .grid{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:22px;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,0.02)}
+
+    h2{font-family:'Playfair Display',serif;color:#ffd6bf;margin:0 0 10px 0}
+    .muted{color:var(--muted)}
+
+    .figure{display:flex;gap:14px;align-items:flex-start}
+    .figure img{width:220px;height:140px;object-fit:cover;border-radius:12px;border:1px solid rgba(255,255,255,0.04)}
+    .figure .info{flex:1}
+
+    .quote{font-style:italic;color:#ffd8bf;padding:12px 16px;border-radius:12px;border:1px solid rgba(255,255,255,0.03);background:linear-gradient(180deg,rgba(255,138,101,0.03),transparent);margin-top:12px}
+
+    .gallery{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:14px}
+    .gallery img{width:100%;height:110px;object-fit:cover;border-radius:10px}
+
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:.95rem}
+
+    @media(max-width:980px){
+      .grid{grid-template-columns:1fr}
+      .hero{flex-direction:column;align-items:flex-start}
+      .hero-img{width:100%;height:200px}
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+      <div class="hero-img">
+        <img src="https://i.ibb.co/NnrqsY15/Some-clusters-of-temples-in-the-village-of-Maluti-at-Dumka-district-in-Jharkhand-State.jpg" alt="Maluti temples"/>
+      </div>
+      <div class="hero-content">
+        <div class="kicker">🎨 Culture in Motion</div>
+        <h1 class="title">Culture in Motion — Living Traditions of Jharkhand</h1>
+        <p class="lead">A journey through Chhau dance, Maluti’s terracotta heritage, and the timeless stories that shape Jharkhand’s cultural identity.</p>
+      </div>
+    </header>
+
+    <!-- CONTENT GRID -->
+    <section class="grid">
+
+      <article class="card">
+        <h2>Chhau Dance — Stories Told Through Masks & Movement</h2>
+        <div class="figure">
+          <img src="https://i.ibb.co/GfWsPxHq/Chhau-6l.jpg" alt="Chhau dance"/>
+          <div class="info">
+            <p class="muted">Chhau is a powerful traditional masked dance of Jharkhand, especially prominent in Seraikela. It blends martial arts, tribal rituals, and classical dance to narrate stories from the <strong>Ramayana</strong> and <strong>Mahabharata</strong>. Elaborate masks portray gods, demons, and animals.</p>
+            <p style="margin-top:10px">Its energetic movements and expressive postures turn mythological tales into living theatre.</p>
+            <div class="quote">"With every leap and turn, Chhau transforms ancient epics into a vibrant visual story."</div>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card">
+        <h4 style="margin:0 0 8px 0;color:#fff;font-family:'Playfair Display',serif">Quick Highlights</h4>
+        <ul style="padding-left:18px;color:var(--muted);margin:6px 0">
+          <li>Origin regions: Seraikela, Purulia, Mayurbhanj.</li>
+          <li>Themes from Hindu epics.</li>
+          <li>Colorful masks handcrafted by local artisans.</li>
+        </ul>
+        <div class="gallery">
+          <img src="https://i.ibb.co/GfWsPxHq/Chhau-6l.jpg" alt="Chhau"/>
+          <img src="https://i.ibb.co/KjHFgyYp/3-Cluster-Of-Temples-in-the-village-of-Maluti-in-the-Dumka-district-of-Jharkhand.jpg" alt="Maluti temples"/>
+          <img src="https://i.ibb.co/NnrqsY15/Some-clusters-of-temples-in-the-village-of-Maluti-at-Dumka-district-in-Jharkhand-State.jpg" alt="Terracotta carvings"/>
+        </div>
+      </aside>
+
+    </section>
+
+    <!-- SECTION 2 -->
+    <section class="grid" style="margin-top:20px">
+      <article class="card">
+        <h2>Maluti Temples — Terracotta Stories in Stone</h2>
+        <div class="figure">
+          <img src="https://i.ibb.co/KjHFgyYp/3-Cluster-Of-Temples-in-the-village-of-Maluti-in-the-Dumka-district-of-Jharkhand.jpg" alt="Maluti temples cluster"/>
+          <div class="info">
+            <p class="muted">The Maluti village in Dumka is home to <strong>72 terracotta temples</strong>, some dating over 300 years old. These temples are adorned with carvings depicting mythological tales, tribal life, and medieval folklore — making them a visual encyclopedia of Jharkhand’s cultural and spiritual past.</p>
+            <p style="margin-top:10px">Walking through Maluti feels like exploring an open-air museum of craftsmanship and devotion.</p>
+            <div class="quote">"Every brick tells a story — mythology, devotion, and the artistry of centuries past."</div>
+          </div>
+        </div>
+      </article>
+
+      <aside class="card">
+        <h4 style="margin:0 0 8px 0;color:#fff;font-family:'Playfair Display',serif">Visitor Notes</h4>
+        <p class="muted">Best time: winter & post-monsoon. Perfect for photography, heritage walks, and architectural study.</p>
+      </aside>
+    </section>
+
+    <footer>
+      <div>&copy; <strong>Jharkhand Cultural Stories</strong> — A themed series celebrating art, heritage, and identity.</div>
+    </footer>
+
+  </main>
+</body>
+</html>

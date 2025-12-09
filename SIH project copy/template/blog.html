@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Page</title>
+
+    <style>
+        :root{
+            --accent: #c21b2b;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:'Poppins',sans-serif;
+        }
+
+        body{
+            background:#0d0b1a;
+            color:white;
+        }
+
+        /* PAGE BACKGROUND EXCEPT HERO */
+        .page-background {
+            background: url("https://img.traveltriangle.com/blog/wp-content/uploads/2021/12/Things-To-Do-In-Jharkhand.jpg") center/cover fixed no-repeat;
+            width: 100%;
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+
+        /* TOP NAVIGATION */
+        .top-header{
+            position:absolute;
+            top:0; left:0;
+            width:100%;
+            z-index:1000;
+        }
+
+        .top-nav{
+            padding:18px 36px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+        }
+
+        .brand-logo{
+            height:130px;
+            object-fit:contain;
+            cursor:pointer;
+        }
+
+        .nav-menu{
+            display:flex;
+            gap:28px;
+        }
+
+        .nav-menu a{
+            color:#fff;
+            text-decoration:none;
+            font-weight:800;
+            letter-spacing:1px;
+            padding:6px 8px;
+            position:relative;
+            transition:0.3s;
+        }
+
+        .nav-menu a::after{
+            content:"";
+            width:0;
+            height:2px;
+            background:var(--accent);
+            position:absolute;
+            left:0;
+            bottom:-10px;
+            transition:0.3s;
+        }
+
+        .nav-menu a:hover::after{
+            width:100%;
+        }
+
+        /* BLOG HERO */
+        .blog-hero{
+            width:100%;
+            height:60vh;
+            background:url('https://i.ibb.co/gbGCTQGG/IMG-20251118-113724.jpg') center/cover no-repeat;
+            position:relative;
+            display:flex;
+            justify-content:center;
+            align-items:center;
+        }
+
+        .blog-hero-overlay{
+            position:absolute;
+            inset:0;
+            
+        }
+
+        /* BLOG SECTION */
+        .blog-wrapper{
+            max-width:1300px;
+            margin:100px auto;
+            padding:40px 20px;
+            display:flex;
+            align-items:center;
+            justify-content:space-between;
+            gap:50px;
+        }
+
+        /* TEXT ANIMATION */
+        .blog-text{
+            flex:1;
+            opacity:0;
+            transform:translateX(100px);
+            transition:1s ease;
+        }
+        .blog-text.active{
+            opacity:1;
+            transform:translateX(0);
+        }
+
+        .blog-text h2{
+            font-size:2.5rem;
+            font-weight:600;
+            margin-bottom:20px;
+            font-family:'Georgia',serif;
+        }
+
+        .blog-text p{
+            font-size:1.1rem;
+            line-height:1.7;
+            color:#d5d5d5;
+        }
+
+        /* IMAGE ANIMATION */
+        .blog-image{
+            flex:1;
+            opacity:0;
+            transform:translateX(-100px);
+            transition:1s ease;
+        }
+        .blog-image.active{
+            opacity:1;
+            transform:translateX(0);
+        }
+
+        .blog-image img{
+            width:100%;
+            height:380px;
+            object-fit:cover;
+            border-radius:12px;
+            box-shadow:0 20px 40px rgba(0,0,0,0.3);
+            transition:0.5s ease;
+            cursor:pointer;
+        }
+
+        .blog-image img:hover{
+            transform:scale(1.05);
+        }
+
+        /* RESPONSIVE */
+        @media(max-width:900px){
+            .blog-wrapper{
+                flex-direction:column;
+                text-align:center;
+            }
+
+            .blog-image,
+            .blog-text{
+                transform:none !important;
+                opacity:1 !important;
+            }
+        }
+
+        /* Footer */
+.jh-footer {
+  position: relative;
+  background-image: url("https://i.ibb.co/ynTVjpQP/IMG-20251117-200029-099.jpg"); /* your temple image */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 80px 0;
+  color: #fff;
+  margin-top: 50px;
+}
+
+.footer-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.55);
+  
+}
+
+.footer-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1300px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  gap: 40px;
+  padding: 0 40px;
+}
+
+.footer-col {
+  width: 33%;
+}
+
+.footer-col h3 {
+  font-size: 22px;
+  margin-bottom: 20px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.footer-col h4 {
+  font-size: 18px;
+  margin: 16px 0 6px;
+  font-weight: 700;
+}
+
+.footer-col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+}
+
+.footer-col ul li {
+  margin: 8px 0;
+}
+
+.footer-col ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  opacity: 0.9;
+  transition: 0.2s ease-in-out;
+}
+
+.footer-col ul li a:hover {
+  opacity: 1;
+  color: #d44a4a;
+}
+
+.footer-col p {
+  font-size: 16px;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+.footer-col .small {
+  font-size: 13px;
+  letter-spacing: 1px;
+  opacity: 0.8;
+}
+
+.footer-lang {
+  margin-top: 20px;
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  font-size: 15px;
+}
+
+/* Responsive */
+@media (max-width: 991px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: left;
+  }
+  .footer-col {
+    width: 100%;
+  }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="top-header">
+        <div class="top-nav">
+            <a href="index.html"><img src="https://i.ibb.co/6JWH1cgQ/IMG-20251117-193758-976.png" class="brand-logo"></a>
+
+            <div class="nav-menu">
+                <a href="#">Explore</a>
+                <a href="#">Experiences</a>
+                <a href="#">Plan your Trip</a>
+                <a href="#">Blogs</a>
+                <a href="#">Media room</a>
+                <a href="#">Book your Gram Stay</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="blog-hero">
+        <div class="blog-hero-overlay"></div>
+    </section>
+
+    <!-- PAGE BACKGROUND START -->
+    <div class="page-background">
+
+        <!-- SECTION 1 -->
+        <section class="blog-wrapper">
+            <div class="blog-text reveal">
+                <h2>HUNDRU WATERFALL:<br>Into the Heart of Jharkhand</h2>
+                <p>
+                    Hundru Waterfall, located near Ranchi, is formed by the Subarnarekha River dropping from 98 meters. 
+                    Known for its rocky terrain and lush greenery, it is a favorite destination for trekkers and photographers.
+                </p>
+            </div>
+
+            <div class="blog-image reveal">
+                <img src="https://media.assettype.com/outlookindia/import/uploadimage/library/16_9/16_9_5/IMAGE_1654581286.webp?w=801&auto=format%2Ccompress&fit=max&format=webp&dpr=1.0" alt="Hundru Waterfall">
+            </div>
+        </section>
+
+        <!-- SECTION 2 -->
+        <section class="blog-wrapper">
+            <div class="blog-text reveal">
+                <h2>LODH WATERFALL:<br>The Roar of Jharkhand</h2>
+                <p>
+                    Lodh Waterfall in Latehar district is the tallest in Jharkhand at 143 meters. Surrounded by dense forest,
+                    its thunderous sound can be heard from miles away — a spectacular sight for nature lovers.
+                </p>
+            </div>
+
+            <div class="blog-image reveal">
+                <img src="https://queryflag.com/qf_ans_img/maxresdefault.jpg" alt="Lodh Waterfall">
+            </div>
+        </section>
+
+        <!-- SECTION 3-->
+        <section class="blog-wrapper">
+            <div class="blog-text reveal">
+                <h2>PANCHGHAGH-FALLS:<br>The Scenic Escape</h2>
+                <p>
+                    Panchghagh Falls, located near Khunti in Jharkhand, is formed by the breaking of the Swarnarekha River into
+                    five swift streams. Surrounded by lush greenery and rocky landscapes, it offers a peaceful and scenic escape
+                    for visitors. It is a popular spot for picnics, photography, and nature lovers.
+                </p>
+            </div>
+               <!-- SECTION 4-->
+
+            <div class="blog-image reveal">
+                <img src="https://i.ibb.co/MyN4Smsv/Panchghagh-falls.jpg" alt="Panchghagh-falls">
+            </div>
+        </section>
+        <section class="blog-wrapper">
+            <div class="blog-text reveal">
+                <h2>BHATINDA-FALLS:<br>The Scenic Escape</h2>
+                <p>
+                   Bhatinda Falls in Jharkhand is a scenic waterfall located about 14 km from Dhanbad railway station.It cascades over large rocky boulders, surrounded by lush green hillocks, making it a popular picnic spot.
+                </p>
+            </div>
+
+            <div class="blog-image reveal">
+                <img src="https://i.ibb.co/rRhCzrXP/bhatinda-falls.jpg" alt="bhatinda-falls" >
+            </div>
+        </section>
+
+       
+        </section>
+        <!-- SECTION 5-->
+
+        <section class="blog-wrapper">
+            <div class="blog-text reveal">
+                <h2>HIRNI-FALLS:<br>Beautiful source</h2>
+                <p>
+                   Hirni Waterfall, located about 70 km from Ranchi in Jharkhand, is a picturesque fall surrounded by dense forests and rolling hills. The water flows gently over wide rock formations, creating a peaceful and scenic atmosphere. It is a popular spot for nature lovers, photography, and weekend outings.
+                </p>
+            </div>
+       <!-- SECTION 6-->
+            <div class="blog-image reveal">
+               <img src="https://i.ibb.co/QFt3mpxj/hirni-falls.jpg" alt="hirni-falls">
+            </div>
+        </section>
+        <section class="blog-wrapper">
+            <div class="blog-text reveal">
+                <h2>BAGHMUNDA-FALL:<br></h2>
+                <p>
+                  Baghmunda Waterfall, located in the Basia block of Gumla district, is a scenic spot where the South Koel River splits into three streams as it flows over large rocky boulders.Its name comes from a rock shaped like a tiger’s head that the water crashes against.It’s a popular picnic and nature-lover’s destination, surrounded by dense forest and a 400-year-old Jagannath temple nearby.
+                </p>
+            </div>
+
+            <div class="blog-image reveal">
+              <img src="https://i.ibb.co/DPXjk6Zk/baghmunda-waterfall.jpg" alt="baghmunda-waterfall" >
+            </div>
+        </section>
+
+
+    </div>
+    <!-- PAGE BACKGROUND END -->
+
+  
+
+    <!-- SCROLL ANIMATION SCRIPT -->
+    <script>
+        const revealElements = document.querySelectorAll(".reveal");
+
+        const revealOnScroll = () => {
+            revealElements.forEach(el => {
+                const rect = el.getBoundingClientRect().top;
+                if (rect < window.innerHeight - 120) {
+                    el.classList.add("active");
+                }
+            });
+        };
+
+        window.addEventListener("scroll", revealOnScroll);
+        revealOnScroll();
+    </script>
+  <!-- Scripts -->
+  <script>
+(function(){if(!window.chatbase||window.chatbase("getState")!=="initialized"){window.chatbase=(...arguments)=>{if(!window.chatbase.q){window.chatbase.q=[]}window.chatbase.q.push(arguments)};window.chatbase=new Proxy(window.chatbase,{get(target,prop){if(prop==="q"){return target.q}return(...args)=>target(prop,...args)}})}const onLoad=function(){const script=document.createElement("script");script.src="https://www.chatbase.co/embed.min.js";script.id="21pog-0nKTyY8I6lKeYbF";script.domain="www.chatbase.co";document.body.appendChild(script)};if(document.readyState==="complete"){onLoad()}else{window.addEventListener("load",onLoad)}})();
+</script>
+  <script src="script.js"></script>
+  <script src="chatbot loader.js"></script>
+
+
+
+
+<footer class="jh-footer">
+  <div class="footer-overlay"></div>
+
+  <div class="footer-container">
+
+    <!-- Column 1 -->
+    <div class="footer-col">
+      <h3>QUICK LINKS</h3>
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Contact Us</a></li>
+        <li><a href="#">Policy and Rules</a></li>
+        <li><a href="#">Complain</a></li>
+        <li><a href="#">RTI</a></li>
+        <li><a href="#">TIC</a></li>
+        <li><a href="#">Tender</a></li>
+        <li><a href="#">FAQ</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+
+      <select class="footer-lang">
+        <option>Select Language</option>
+        <option>English</option>
+        <option>Hindi</option>
+      </select>
+    </div>
+
+    <!-- Column 2 -->
+    <div class="footer-col">
+      <h3>GET IN TOUCH</h3>
+      <p class="small">(MONDAY TO SATURDAY 10:00 HRS TO 18:00 HRS)</p>
+
+      <h4>Directorate of Tourism</h4>
+      <p>MDI Building, 3rd Floor, Dhurwa, Ranchi-834004</p>
+      <p>📧 dirjharkhandtourism[at]gmail[dot]com</p>
+
+      <h4>Department of Tourism</h4>
+      <p>FFP Building, 2nd Floor, Dhurwa, Ranchi-834004</p>
+      <p>📧 govjharkhandtourism[at]gmail[dot]com</p>
+    </div>
+
+    <!-- Column 3 -->
+    <div class="footer-col">
+      <h3>ONLINE BOOKING, FEEDBACK & SUPPORT</h3>
+
+      <p>📧 jtdcltd[at]gmail[dot]com</p>
+      <p>📞 0651-2331828, 2331643</p>
+
+      <h4>Jharkhand Tourism Development Corporation Ltd</h4>
+      <p>6th Floor, Premium Suit Building JUPMI Campus,<br>
+      Plant Plaza Road, Dhurwa, Ranchi-834004</p>
+
+      <p>📧 jtdcltd[at]gmail[dot]com<br>
+      📞 +91 651 2331828</p>
+    </div>
+
+  </div>
+  <div class="container">
+      <strong>©️2025 Jharkhand Tourism — Built for SIH 2025</strong>
+    </div>
+</footer>
+</body>
+</html>
